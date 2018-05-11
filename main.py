@@ -64,19 +64,19 @@ async def eight_ball():
     aliases = "m"
 )
 async def math(ctx, firstNUM, operator, secondNUM):
-    int1num = int(firstNUM)
-    int2num = int(secondNUM)
+    intFirstnum = int(firstNUM)
+    intSecondnum = int(secondNUM)
     if operator == "*":
-        answer = int(int1num * int2num)
+        answer = int(intFirstnum * intSecondnum)
     elif operator == "/":
-        answer = int(int1num / int2num)
+        answer = int(intFirstnum / intSecondnum)
     elif operator == "+":
-        answer = int(int1num + int2num)
+        answer = int(intFirstnum + intSecondnum)
     elif operator == "-":
-        answer = int(int1num - int2num)
+        answer = int(intFirstnum - intSecondnum)
     elif operator == "square":
-        if int2num != "":
-            answer = int(int1num * int1num)
+        if intSecondnum != "":
+            answer = int(intFirstnum * intFirstnum)
         else:
             answer = "when squareing you only need one number"
     else:
