@@ -10,5 +10,5 @@ def test():
     await asyncio.sleep(9)
     os.system("python3 main.py")
 #done
-async test()
+test()
 exit()
