@@ -137,5 +137,8 @@ client.run(BOT_TOKEN)
 
 #auto updating and restarting
 os.system("rm main.py")
-os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py")
-os.system("python3 main.py")
+#$client = new-object System.Net.WebClient
+#$client.DownloadFile("http://www.xyz.net/file.txt", "C:\tmp\file.txt")
+os.system('client = new-object System.Net.WebClient' if os.name == 'nt' else 'echo downloading update')
+os.system('client.DownloadFile("https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py", "D:\programming\python\discord_weather_bot\main.py")' if os.name =='nt' else "wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py")
+os.system('py main.py' if os.name == 'nt' else 'python3 main.py')
