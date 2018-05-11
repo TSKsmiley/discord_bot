@@ -86,13 +86,14 @@ async def math(ctx, firstNUM, operator, secondNUM):
 
 
 #Special dev commands
-@client.command(name = "stop",
+@client.command(name = "update",
                 pass_context=True,
+                aliases = ["restart", "reboot", "updt"]
                 )
 async def stop(ctx):
     if ctx.message.author.id == AUTHOR_ID:
         await client.change_presence(game=None, status="invisible")
-        await client.say("STOPPING! " + ctx.message.author.mention)
+        await client.say("Updating! " + ctx.message.author.mention)
         exit()
     else:
         await client.say("Invalid permissions \nthis command is only for the bot owner")
@@ -127,3 +128,4 @@ async def on_error(error):
 
 #running the bot
 client.run(BOT_TOKEN)
+os.system("python3 updater.py")
