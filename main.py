@@ -56,8 +56,33 @@ async def eight_ball():
         ]
         await client.say(random.choice(possible_responses))
 
-#weather command
+#math command
+@client.command(
+    name = "math",
+    description = "a calculator command",
+    pass_context = True,
+    aliases = "m"
+)
+async def math(ctx, firstNUM, operator, secondNUM):
+    int1num = int(firstNUM)
+    int2num = int(secondNUM)
+    if operator == "*":
+        answer = int(int1num * int2num)
+    elif operator == "/":
+        answer = int(int1num / int2num)
+    elif operator == "+":
+        answer = int(int1num + int2num)
+    elif operator == "-":
+        answer = int(int1num - int2num)
+    elif operator == "square":
+        if int2num != "":
+            answer = int(int1num * int1num)
+        else:
+            answer = "when squareing you only need one number"
+    else:
+        answer = "command usage: !m [number] ('*' / '/' / '+' / '-' / 'square') [number]"
 
+    await client.say(answer)
 
 
 #Special dev commands
