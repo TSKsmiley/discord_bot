@@ -98,16 +98,6 @@ async def stop(ctx):
         await client.say("Invalid permissions \nthis command is only for the bot owner")
 
 
-@client.command(name="update",
-                pass_context=True,
-                )
-async def update(ctx):
-    if ctx.message.author.id == AUTHOR_ID:
-        os.system("python3 updater.py")
-        exit()
-    else:
-        await client.say("Invalid permissions \nthis command is only for the bot owner")
-
 
 @client.command(
     name = "setgame",
