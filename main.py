@@ -100,7 +100,7 @@ async def update(ctx):
     if str(ctx.message.author.id) == str(Config['OWNER_ID']):
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
-        exit()
+        
     else:
         await client.say("Invalid permissions this command is only for the bot owner")
 
@@ -136,6 +136,9 @@ async def on_error(error):
 client.run(BOT_TOKEN)
 
 #auto updating and restarting
-os.system("rm main.py")
-os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py")
-os.system("python3 main.py")
+if(os.name != "nt"):
+    os.system("rm main.py")
+    os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py")
+    os.system("python3 main.py")
+else:
+    os.system("python main.py")
