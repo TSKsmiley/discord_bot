@@ -1,6 +1,7 @@
 from discord.ext.commands import Bot
 from discord import Game
 from colorama import init
+from igdb_api_python.igdb import igdb
 import random
 import os
 import sys
@@ -12,7 +13,7 @@ init()
 #os specific commands
 os.system('cls' if os.name == 'nt' else 'clear')
 os.system('title Discord TSK bot' if os.name ==
-          'nt' else 'echo "^[]0;Discord TSK bot^G"')
+          'nt' else 'not windows')
 #defining terminal colors
 
 class termcol:
@@ -30,6 +31,11 @@ BOT_PREFIX = ("?",",")
 BOT_TOKEN = ("NDIyNzQ3NDg1OTg4MTkyMjY2.DdTF3A.3tX16Y345-9RSBSy2suGkQslrKc")
 BOT_ID = ("422747485988192266")
 AUTHOR_ID = ("174427069747429376")
+igdb = igdb("93310ab3b7a2fcedd9da491121b55a27")
+result = igdb.games()
+
+for game in result.body:
+    print("Retrieved: " + game["name"])
 
 #defing bot "name" and prefix and printing
 client = Bot(BOT_PREFIX)
