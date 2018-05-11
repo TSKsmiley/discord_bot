@@ -124,7 +124,7 @@ async def on_ready():
 
 @client.event
 async def on_error(error):
-    print(termcol.WARNING + "ERROR:" + error)
+    print(termcol.WARNING + "ERROR:" + error + termcol.ENDC)
 
 #running the bot
 client.run(BOT_TOKEN)
