@@ -1,4 +1,5 @@
 import os
+import time
 
 #updater program
 os.system("rm main.py")
