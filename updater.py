@@ -8,3 +8,4 @@ os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/
 time.sleep(8)
 os.system("python3 main.py")
 exit()
+#done
