@@ -1,11 +1,11 @@
 from discord.ext.commands import Bot
 from discord import Game
 from colorama import init
-from igdb_api_python.igdb import igdb
 import random
 import os
 import sys
 import requests
+import json
 #starting colorama
 init()
 
@@ -27,15 +27,13 @@ class termcol:
     UNDERLINE = '\033[4m'
 
 #========= different variables for the bot ==========
-BOT_PREFIX = ("?",",")
-BOT_TOKEN = ("NDIyNzQ3NDg1OTg4MTkyMjY2.DdTF3A.3tX16Y345-9RSBSy2suGkQslrKc")
-BOT_ID = ("422747485988192266")
-AUTHOR_ID = ("174427069747429376")
-igdb = igdb("93310ab3b7a2fcedd9da491121b55a27")
-result = igdb.games()
+with open('Config.json') as f:
+    Config = json.load(f)
 
-for game in result.body:
-    print("Retrieved: " + game["name"])
+BOT_PREFIX = ("?",",")
+BOT_TOKEN = Config['BOT_TOKEN']
+BOT_ID = Config['BOT_ID']
+AUTHOR_ID = Config['OWNER_ID']
 
 #defing bot "name" and prefix and printing
 client = Bot(BOT_PREFIX)
