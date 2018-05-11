@@ -118,7 +118,7 @@ async def setgame(ctx, gamename):
 #events
 @client.event
 async def on_ready():
-    print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.HEADER)
+    print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
 
 
