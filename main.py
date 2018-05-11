@@ -95,14 +95,14 @@ async def math(ctx, firstNUM, operator, secondNUM):
                 pass_context=True,
                 aliases = ["restart", "reboot", "updt"]
                 )
-async def stop(ctx):
+async def update(ctx):
     print(ctx.message.author.id + "\n" + str(Config['OWNER_ID']))
-    if ctx.message.author.id == str(Config['OWNER_ID']):
+    if str(ctx.message.author.id) == str(Config['OWNER_ID']):
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
         exit()
     else:
-        await client.say("Invalid permissions \nthis command is only for the bot owner")
+        await client.say("Invalid permissions this command is only for the bot owner")
 
 
 
@@ -114,11 +114,11 @@ async def stop(ctx):
     pass_context = True
     )
 async def setgame(ctx, gamename):
-    if ctx.message.author.id == Config['OWNER_ID']:
+    if str(ctx.message.author.id) == str(Config['OWNER_ID']):
         await client.change_presence(game=Game(name=gamename))
         print(gamename)
     else:
-        await client.say("Invalid permissions \nthis command is only for the bot owner")
+        await client.say("Invalid permissions this command is only for the bot owner")
 
 
 #events
@@ -137,8 +137,5 @@ client.run(BOT_TOKEN)
 
 #auto updating and restarting
 os.system("rm main.py")
-#$client = new-object System.Net.WebClient
-#$client.DownloadFile("http://www.xyz.net/file.txt", "C:\tmp\file.txt")
-os.system('client = new-object System.Net.WebClient' if os.name == 'nt' else 'echo downloading update')
-os.system('client.DownloadFile("https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py", "D:\programming\python\discord_weather_bot\main.py")' if os.name =='nt' else "wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py")
-os.system('py main.py' if os.name == 'nt' else 'python3 main.py')
+os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py")
+os.system("python3 main.py")
