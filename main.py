@@ -33,7 +33,8 @@ with open('Config.json') as f:
 BOT_PREFIX = ("?",",")
 BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
-AUTHOR_ID = Config['OWNER_ID']
+
+print(Config['OWNER_ID'])
 
 #defing bot "name" and prefix and printing
 client = Bot(BOT_PREFIX)
@@ -95,7 +96,7 @@ async def math(ctx, firstNUM, operator, secondNUM):
                 aliases = ["restart", "reboot", "updt"]
                 )
 async def stop(ctx):
-    if ctx.message.author.id == AUTHOR_ID:
+    if ctx.message.author.id == Config['OWNER_ID']:
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
         exit()
@@ -112,7 +113,7 @@ async def stop(ctx):
     pass_context = True
     )
 async def setgame(ctx, gamename):
-    if ctx.message.author.id == AUTHOR_ID:
+    if ctx.message.author.id == Config['OWNER_ID']:
         await client.change_presence(game=Game(name=gamename))
         print(gamename)
     else:
