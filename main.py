@@ -92,7 +92,7 @@ async def math(ctx, firstNUM, operator, secondNUM):
                 )
 async def stop(ctx):
     if ctx.message.author.id == AUTHOR_ID:
-        await client.change_presence(game=None, status="invisible")
+        await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
         exit()
     else:
@@ -109,7 +109,7 @@ async def stop(ctx):
     )
 async def setgame(ctx, gamename):
     if ctx.message.author.id == AUTHOR_ID:
-        await client.change_presence(game=Game(name=srt(gamename)))
+        await client.change_presence(game=Game(name=gamename))
         print(gamename)
     else:
         await client.say("Invalid permissions \nthis command is only for the bot owner")
