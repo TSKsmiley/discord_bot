@@ -96,7 +96,8 @@ async def math(ctx, firstNUM, operator, secondNUM):
                 aliases = ["restart", "reboot", "updt"]
                 )
 async def stop(ctx):
-    if ctx.message.author.id == Config['OWNER_ID']:
+    print(ctx.message.author.id + "\n" + str(Config['OWNER_ID']))
+    if ctx.message.author.id == str(Config['OWNER_ID']):
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
         exit()
