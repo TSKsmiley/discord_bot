@@ -1,11 +1,13 @@
 import os
-import time
+import asyncio
 
 #updater program
-os.system("rm main.py")
-time.sleep(0.2)
-os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/master/main.py")
-time.sleep(8)
-os.system("python3 main.py")
-exit()
+async def test():
+    os.system("rm main.py")
+    await asyncio.sleep(1)
+    os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_weather_bot/master/main.py")
+    await asyncio.sleep(9)
+    os.system("python3 main.py")
+    exit()
 #done
+async test()
