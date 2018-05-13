@@ -65,7 +65,9 @@ async def eight_ball():
 
 
 #github command [random text to fool the github raw]
-@client.command(aliases = ["todo", "to-do", "git"])
+@client.command(
+    name = "github",
+    aliases = ["todo", "to-do", "git"])
 async def github():
     client.say("information about the development of this bot is at the github page: https://github.com/TSKsmiley/discord_bot/projects/1")
 
