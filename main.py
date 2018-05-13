@@ -57,7 +57,8 @@ async def eight_ball():
             "It is not looking likely",
             "Too hard to tell",
             "It is quite possible",
-            "defenetly"
+            "definitely",
+            "I don't know but ramo is gay"
         ]
         await client.say(random.choice(possible_responses))
 
