@@ -150,6 +150,6 @@ client.run(BOT_TOKEN)
 if(os.name != "nt"):
     os.system("rm main.py")
     asyncio.sleep(3)
-    os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_bot/e78e6bfa6b59fb099142d7c1dd791de8b1e0c64b/main.py")
+    os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_bot/master/main.py")
     asyncio.sleep(10)
     os.system("python3 main.py")
