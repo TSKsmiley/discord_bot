@@ -143,10 +143,9 @@ async def update(ctx):
     if AuthorisedUser(ctx.message.author.id):
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
+        print("UPDATING...")
         await client.logout()
-    else:
-        await client.say("Invalid permissions this command is only for the bot Devs")
-
+ 
 
 #set-motd
 @client.command(
@@ -159,7 +158,6 @@ async def set_motd(ctx, newMOTD):
     if AuthorisedUser(ctx.message.author.id):
         MOTD = newMOTD
         await client.say("MOTD is now set to: " + MOTD)
-    else
 
 
 #Set game
@@ -171,7 +169,7 @@ async def set_motd(ctx, newMOTD):
     pass_context = True
     )
 async def setgame(ctx, gamename):
-    if AuthorisedUser:
+    if AuthorisedUser(ctx.message.author.id):
         await client.change_presence(game=Game(name=gamename))
         print(termcol.WARNING + "Set game to:" + gamename + termcol.ENDC)
 
