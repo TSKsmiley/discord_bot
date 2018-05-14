@@ -92,18 +92,19 @@ async def whatisthemeaningoflife():
     await client.say("42")
 
 
-
 #host
 @client.command(
     name = "host"
 )
 async def host():
-    await client.say(client.name + " is hosted on digital ocean: https://m.do.co/c/f69dc13cd3a6")
+    await client.say(client.user.display_name + " is hosted on digital ocean: https://m.do.co/c/f69dc13cd3a6")
+
 
 #NOT WORKING rollme command
 #@client.command()
 #async def rollme():
 #    await client.say("!play https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
 
 #math command
 @client.command(
@@ -175,16 +176,25 @@ async def setgame(ctx, gamename):
 
 
 
+
 #======== events ========
+
+#ready
 @client.event
 async def on_ready():
     print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
 
 
+#error
 @client.event
 async def on_error(error):
     print(termcol.WARNING + "ERROR:" + error + termcol.ENDC)
+
+
+
+
+#========= Other ========
 
 #running the bot
 client.run(BOT_TOKEN)
