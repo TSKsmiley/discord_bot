@@ -82,6 +82,9 @@ async def eight_ball():
 async def github():
     await client.say("information about the development of this bot is at the github page: https://github.com/TSKsmiley/discord_bot/projects/1")
 
+@client.command()
+async def rollme():
+    await client.say("play https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 #math command
 @client.command(
@@ -122,6 +125,7 @@ async def update(ctx):
     if AuthorisedUser(ctx.message.author.id):
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
+        await client.logout()
         exit()
     else:
         await client.say("Invalid permissions this command is only for the bot Devs")
