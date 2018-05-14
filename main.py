@@ -126,7 +126,6 @@ async def update(ctx):
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
         await client.logout()
-        exit()
     else:
         await client.say("Invalid permissions this command is only for the bot Devs")
 
