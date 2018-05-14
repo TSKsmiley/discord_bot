@@ -37,6 +37,7 @@ with open('Config.json') as f:
 BOT_PREFIX = ("?",",")
 BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
+MOTD = " "
 
 print(Config['OWNER_ID'])
 
@@ -44,8 +45,8 @@ def AuthorisedUser(userID):
     if str(userID) == str(Config['OWNER_ID']) or str(userID) == "234733470650204160":
         return True
     else:
+        await client.say("Invalid permissions this command is only for the bot Devs")
         return False
-
 
 
 
@@ -91,6 +92,14 @@ async def whatisthemeaningoflife():
     await client.say("42")
 
 
+#MOTD
+@client.command(
+    name = "motd"
+    aliases=["motd", "message_of_the_day"]
+)
+async def message_of_the_day()
+
+
 #NOT WORKING rollme command
 #@client.command()
 #async def rollme():
@@ -122,7 +131,9 @@ async def math(ctx, firstNUM, operator, secondNUM):
 
 
 
-#Special dev commands
+#===== Special dev commands =====
+
+#update
 @client.command(name = "update",
                 pass_context=True,
                 aliases = ["restart", "reboot", "updt"]
@@ -137,7 +148,21 @@ async def update(ctx):
         await client.say("Invalid permissions this command is only for the bot Devs")
 
 
+#set-motd
+@client.command(
+    name = "setmotd"
+    aliases = ["set-motd", "smotd", "s-motd"]
+    biref = "dev only command"
+    pass_context 
+)
+async def set_motd(ctx, newMOTD):
+    if AuthorisedUser(ctx.message.author.id):
+        MOTD = newMOTD
+        await client.say("MOTD is now set to: " + MOTD)
+    else
 
+
+#Set game
 @client.command(
     name = "setgame",
     aliases = ["game","changegame"],
@@ -146,14 +171,13 @@ async def update(ctx):
     pass_context = True
     )
 async def setgame(ctx, gamename):
-    if str(ctx.message.author.id) == str(Config['OWNER_ID']):
+    if AuthorisedUser:
         await client.change_presence(game=Game(name=gamename))
         print(termcol.WARNING + "Set game to:" + gamename + termcol.ENDC)
-    else:
-        await client.say("Invalid permissions this command is only for the bot Devs")
 
 
-#events
+
+#======== events ========
 @client.event
 async def on_ready():
     print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
