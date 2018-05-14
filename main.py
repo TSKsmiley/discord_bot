@@ -84,7 +84,7 @@ async def github():
 
 @client.command()
 async def rollme():
-    await client.say("play https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+    await client.say("!play https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 #math command
 @client.command(
