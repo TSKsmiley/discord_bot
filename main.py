@@ -31,6 +31,7 @@ class termcol:
 with open('Config.json') as f:
     Config = json.load(f)
 
+VERSION = "0.0.1"
 BOT_PREFIX = ("?",",")
 BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
@@ -42,6 +43,7 @@ client = Bot(BOT_PREFIX)
 print("\n\n===================" + termcol.OKGREEN + "  TSK " +
       termcol.OKBLUE + " DISCORD BOT " + termcol.ENDC + "===================")
 print("Attempting login with token: " + termcol.WARNING + BOT_TOKEN + termcol.ENDC + "\n=========================================================")
+print(VERSION)
 
 #===== Bot Commands =====
 
