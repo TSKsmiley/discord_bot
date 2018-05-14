@@ -8,7 +8,7 @@ import requests
 import json
 import asyncio
 
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 #starting colorama
 init()
 
@@ -37,7 +37,7 @@ with open('Config.json') as f:
 BOT_PREFIX = ("?",",")
 BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
-MOTD = " "
+varMOTD = " "
 
 print(Config['OWNER_ID'])
 
@@ -93,13 +93,20 @@ async def whatisthemeaningoflife():
 
 
 #MOTD
-#@client.command(
-#    name = "motd",
-#    aliases = ["motd", "message_of_the_day"]
-#)
-#async def motd():
-#    await client.say("MOTD: ``" + MOTD + "``")
+@client.command(
+    name = "motd",
+    aliases = ["motd", "message_of_the_day"]
+)
+async def motd():
+    await client.say("MOTD: ``" + varMOTD + "``")
 
+
+#host
+@client.command(
+    name = "host"
+)
+async def host():
+    await client.say(client.name + " is hosted on digital ocean: https://m.do.co/c/f69dc13cd3a6")
 
 #NOT WORKING rollme command
 #@client.command()
@@ -157,7 +164,7 @@ async def update(ctx):
 )
 async def set_motd(ctx, newMOTD):
     if AuthorisedUser(ctx.message.author.id):
-        MOTD = newMOTD
+        varMOTD = newMOTD
         await client.say("MOTD is now set to: " + MOTD)
 
 
