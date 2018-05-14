@@ -7,6 +7,8 @@ import sys
 import requests
 import json
 import asyncio
+
+VERSION = "0.1.1"
 #starting colorama
 init()
 
@@ -31,7 +33,7 @@ class termcol:
 with open('Config.json') as f:
     Config = json.load(f)
 
-VERSION = "0.1.0"
+
 BOT_PREFIX = ("?",",")
 BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
@@ -104,14 +106,9 @@ async def math(ctx, firstNUM, operator, secondNUM):
         answer = int(intFirstnum + intSecondnum)
     elif operator == "-":
         answer = int(intFirstnum - intSecondnum)
-    elif operator == "square":
-        if intSecondnum != "":
-            answer = int(intFirstnum * intFirstnum)
-        else:
-            answer = "when squareing you only need one number"
-    else:
-        answer = "command usage: !m [number] ('*' / '/' / '+' / '-' / 'square') [number]"
-
+    elif operator == "^":
+        answer = int(intFirstnum ^ intSecondnum)
+    
     await client.say(answer)
 
 
