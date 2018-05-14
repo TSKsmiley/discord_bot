@@ -193,4 +193,7 @@ client.run(BOT_TOKEN)
 
 #auto updating and restarting (linux)
 if(os.name != "nt"):
+    os.system("rm updt.py")
+    os.system("wget https://raw.githubusercontent.com/TSKsmiley/discord_bot/master/updt.py")
     os.system("python3 updt.py")
+
