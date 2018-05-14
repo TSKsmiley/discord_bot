@@ -31,7 +31,7 @@ class termcol:
 with open('Config.json') as f:
     Config = json.load(f)
 
-VERSION = "0.1.2"
+VERSION = "0.1.0"
 BOT_PREFIX = ("?",",")
 BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
