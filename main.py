@@ -93,12 +93,12 @@ async def whatisthemeaningoflife():
 
 
 #MOTD
-@client.command(
-    name = "motd",
-    aliases = ["motd", "message_of_the_day"]
-)
-async def motd():
-    await client.say("MOTD: ``" + MOTD + "``")
+#@client.command(
+#    name = "motd",
+#    aliases = ["motd", "message_of_the_day"]
+#)
+#async def motd():
+#    await client.say("MOTD: ``" + MOTD + "``")
 
 
 #NOT WORKING rollme command
