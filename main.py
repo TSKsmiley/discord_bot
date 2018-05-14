@@ -84,9 +84,17 @@ async def eight_ball():
 async def github():
     await client.say("information about the development of this bot is at the github page: https://github.com/TSKsmiley/discord_bot/projects/1")
 
-@client.command()
-async def rollme():
-    await client.say("!play https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+#what is the meaning tho
+@client.command
+async def whatisthemeaningoflife():
+    await client.say("42")
+
+
+#NOT WORKING rollme command
+#@client.command()
+#async def rollme():
+#    await client.say("!play https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 
 #math command
 @client.command(
@@ -110,6 +118,8 @@ async def math(ctx, firstNUM, operator, secondNUM):
         answer = int(intFirstnum ^ intSecondnum)
     
     await client.say(answer)
+
+
 
 
 #Special dev commands
