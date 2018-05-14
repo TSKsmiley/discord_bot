@@ -98,7 +98,8 @@ async def whatisthemeaningoflife():
     aliases = ["motd", "message_of_the_day"],
     brief = "Message of the day"
 )
-async def message_of_the_day()
+async def message_of_the_day():
+    await client.say("MOTD: ``" + MOTD + "``")
 
 
 #NOT WORKING rollme command
