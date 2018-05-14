@@ -38,6 +38,15 @@ BOT_ID = Config['BOT_ID']
 
 print(Config['OWNER_ID'])
 
+def AuthorisedUser(userID):
+    if str(userID) == str(Config['OWNER_ID']) or str(userID) == "234733470650204160":
+        return True
+    else
+        return False
+
+
+
+
 #defing bot "name" and prefix and printing
 client = Bot(BOT_PREFIX)
 print("\n\n===================" + termcol.OKGREEN + "  TSK " +
@@ -110,12 +119,12 @@ async def math(ctx, firstNUM, operator, secondNUM):
                 )
 async def update(ctx):
     print(ctx.message.author.id + "\n" + str(Config['OWNER_ID']))
-    if str(ctx.message.author.id) == str(Config['OWNER_ID']):
+    if AuthorisedUser(ctx.message.author.id):
         await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
         exit()
     else:
-        await client.say("Invalid permissions this command is only for the bot owner")
+        await client.say("Invalid permissions this command is only for the bot Devs")
 
 
 
@@ -129,9 +138,9 @@ async def update(ctx):
 async def setgame(ctx, gamename):
     if str(ctx.message.author.id) == str(Config['OWNER_ID']):
         await client.change_presence(game=Game(name=gamename))
-        print(gamename)
+        print(termcol.WARNING + "Set game to:" + gamename + termcol.ENDC)
     else:
-        await client.say("Invalid permissions this command is only for the bot owner")
+        await client.say("Invalid permissions this command is only for the bot Devs")
 
 
 #events
