@@ -8,7 +8,7 @@ import requests
 import json
 import asyncio
 
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 #starting colorama
 init()
 
@@ -94,8 +94,9 @@ async def whatisthemeaningoflife():
 
 #MOTD
 @client.command(
-    name = "motd"
-    aliases = ["motd", "message_of_the_day"]
+    name = "motd",
+    aliases = ["motd", "message_of_the_day"],
+    brief = "Message of the day"
 )
 async def message_of_the_day()
 
