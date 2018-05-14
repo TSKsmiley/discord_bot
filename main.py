@@ -41,7 +41,7 @@ print(Config['OWNER_ID'])
 def AuthorisedUser(userID):
     if str(userID) == str(Config['OWNER_ID']) or str(userID) == "234733470650204160":
         return True
-    else
+    else:
         return False
 
 
@@ -139,7 +139,7 @@ async def setgame(ctx, gamename):
     if str(ctx.message.author.id) == str(Config['OWNER_ID']):
         await client.change_presence(game=Game(name=gamename))
         print(termcol.WARNING + "Set game to:" + gamename + termcol.ENDC)
-    else
+    else:
         await client.say("Invalid permissions this command is only for the bot Devs")
 
 
