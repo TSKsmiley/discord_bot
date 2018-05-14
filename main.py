@@ -97,7 +97,7 @@ async def whatisthemeaningoflife():
     name = "motd",
     aliases = ["motd", "message_of_the_day"]
 )
-async def message_of_the_day():
+async def motd():
     await client.say("MOTD: ``" + MOTD + "``")
 
 
