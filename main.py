@@ -139,7 +139,7 @@ async def setgame(ctx, gamename):
     if str(ctx.message.author.id) == str(Config['OWNER_ID']):
         await client.change_presence(game=Game(name=gamename))
         print(termcol.WARNING + "Set game to:" + gamename + termcol.ENDC)
-    else:
+    else
         await client.say("Invalid permissions this command is only for the bot Devs")
 
 
