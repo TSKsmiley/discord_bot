@@ -92,11 +92,6 @@ async def whatisthemeaningoflife():
     await client.say("42")
 
 
-#MOTD
-@client.command
-async def motd():
-    await client.say("MOTD: ``" + varMOTD + "``")
-
 
 #host
 @client.command(
