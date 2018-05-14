@@ -150,10 +150,10 @@ async def update(ctx):
 
 #set-motd
 @client.command(
-    name = "setmotd"
-    aliases = ["set-motd", "smotd", "s-motd"]
-    biref = "dev only command"
-    pass_context 
+    name = "setmotd",
+    aliases = ["set-motd", "smotd", "s-motd"],
+    biref = "dev only command",
+    pass_context = True
 )
 async def set_motd(ctx, newMOTD):
     if AuthorisedUser(ctx.message.author.id):
