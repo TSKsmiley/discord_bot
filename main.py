@@ -41,7 +41,7 @@ MOTD = " "
 
 print(Config['OWNER_ID'])
 
-def AuthorisedUser(userID):
+async def AuthorisedUser(userID):
     if str(userID) == str(Config['OWNER_ID']) or str(userID) == "234733470650204160":
         return True
     else:
