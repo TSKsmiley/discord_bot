@@ -95,8 +95,7 @@ async def whatisthemeaningoflife():
 #MOTD
 @client.command(
     name = "motd",
-    aliases = ["motd", "message_of_the_day"],
-    brief = "Message of the day"
+    aliases = ["motd", "message_of_the_day"]
 )
 async def message_of_the_day():
     await client.say("MOTD: ``" + MOTD + "``")
