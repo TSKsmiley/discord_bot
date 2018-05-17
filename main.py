@@ -187,7 +187,7 @@ async def on_ready():
     print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
     await client.start_private_message(str(Config['OWNER_ID'])
-    await client.send_message("Ready! ``Version: " + VERSION + "``")
+    await client.send_message(message.user, str("Ready! ``Version: " + VERSION + "``"))
           
 
 #error
