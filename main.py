@@ -143,9 +143,10 @@ async def math(ctx, firstNUM, operator, secondNUM):
 async def update(ctx):
     print(ctx.message.author.id + "\n" + str(Config['OWNER_ID']))
     if AuthorisedUser(ctx.message.author.id):
-        await client.change_presence(game=Game(name="Updating.."), status="invisible")
         await client.say("Updating! " + ctx.message.author.mention)
+        await client.change_presence(game=Game(name="Updating.."), status="invisible")
         print("UPDATING...")
+        await asyncio.sleep(2)
         await client.logout()
  
 
@@ -185,7 +186,9 @@ async def setgame(ctx, gamename):
 async def on_ready():
     print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
-
+    await client.start_private_message(str(Config['OWNER_ID'])
+    await client.send_message("Ready!")
+          
 
 #error
 @client.event
