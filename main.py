@@ -193,9 +193,9 @@ async def on_ready():
 @client.event
 async def on_error(error):
     print(error)
-                              
-                              
-                              
+
+
+
 
 #========= Other ========
 
