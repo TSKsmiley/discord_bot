@@ -189,12 +189,6 @@ async def on_ready():
     #sending messages out
     await client.send_message(message.str(Config['OWNER_ID'], str("Ready! ``Version: " + VERSION + "``"))
 
-#error
-@client.event
-async def on_error(error):
-    print(error)
-
-
 
 
 #========= Other ========
