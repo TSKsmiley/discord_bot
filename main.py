@@ -94,7 +94,7 @@ async def eight_ball():
     aliases = ["information"]
 )
 async def info():
-    await client.say("The beautiful people who worked on the bot!\nThe Smiley Killer\nThe Lord Of Ducks")
+    await client.say("The beautiful people who worked on the bot!\n<@174427069747429376>\n<@234733470650204160>")
 
 #github command [random text to fool the github raw]
 @client.command(
@@ -118,10 +118,10 @@ async def host():
     await client.say(client.user.display_name + " is hosted on digital ocean: https://m.do.co/c/f69dc13cd3a6")
 
 
-#NOT WORKING rollme command
-#@client.command()
-#async def rollme():
-#    await client.say("!play https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+#roll links
+@client.command
+async def rollme(category, headline):
+    await client.say("https://www.latlmes.com/" + category + "/" + headline)
 
 
 #math command
