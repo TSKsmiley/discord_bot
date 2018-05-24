@@ -190,7 +190,7 @@ async def on_ready():
     discord.Member
     #sending messages out
     ownerid = "<@174427069747429376>"
-    await client.send_message(discord.Member.User("<@174427069747429376>")), str("Ready! ``Version: " + VERSION + "``"))
+    await client.send_message(discord.Member.User("<@174427069747429376>"), str("Ready! ``Version: " + VERSION + "``"))
     #await client.send_message(message.Config['DEV_ID'], str("Ready! ``Version: " + VERSION + "``"))
 
 
