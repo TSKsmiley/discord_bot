@@ -1,6 +1,7 @@
 from discord.ext.commands import Bot
 from discord import Game
 from colorama import init
+import discord
 import random
 import os
 import sys
@@ -35,7 +36,7 @@ with open('Config.json') as f:
 
 
 BOT_PREFIX = ("?",",")
-BOT_TOKEN = Config['BOT_TOKEN']
+BOT_TOKEN = "NDIyNzQ3NDg1OTg4MTkyMjY2.DeCnNQ.38QqRsP1efuKUdng1JbMY3ehuR0" #Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
 varMOTD = " "
 
@@ -181,14 +182,17 @@ async def setgame(ctx, gamename):
 
 #======== events ========
 
-#ready
+
 @client.event
 async def on_ready():
     print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
     #sending messages out
-    await client.send_message(message.str(Config['OWNER_ID']), str("Ready! ``Version: " + VERSION + "``"))
-    await client.send_message(message.str(Config['DEV_ID']), str("Ready! ``Version: " + VERSION + "``"))
+    ownerid = "<@174427069747429376>"
+    await client.send_message(discord.member.User("<@174427069747429376>")), str("Ready! ``Version: " + VERSION + "``"))
+    #await client.send_message(message.Config['DEV_ID'], str("Ready! ``Version: " + VERSION + "``"))
+
+
 
 
 #========= Other ========
