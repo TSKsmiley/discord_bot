@@ -9,7 +9,7 @@ import requests
 import json
 import asyncio
 
-VERSION = "0.1.4.7"
+VERSION = "0.1.5"
 #starting colorama
 init()
 
@@ -207,6 +207,7 @@ async def setgame(ctx, gamename):
 #======== events ========
 
 
+#when the bot is ready this code runs
 @client.event
 async def on_ready():
     print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
