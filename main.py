@@ -9,7 +9,7 @@ import requests
 import json
 import asyncio
 
-VERSION = "0.1.4.7.0.1"
+VERSION = "0.1.4.7"
 #starting colorama
 init()
 
