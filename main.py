@@ -36,7 +36,7 @@ with open('Config.json') as f:
 
 
 BOT_PREFIX = ("?",",")
-BOT_TOKEN = "NDIyNzQ3NDg1OTg4MTkyMjY2.DeCnNQ.38QqRsP1efuKUdng1JbMY3ehuR0" #Config['BOT_TOKEN']
+BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
 varMOTD = " "
 
