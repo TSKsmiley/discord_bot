@@ -189,8 +189,8 @@ async def on_ready():
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
     discord.Member
     #sending messages out
-    ownerid = "<@174427069747429376>"
-    await client.send_message(discord.Member.User("<@174427069747429376>"), "Ready! ``Version: " + VERSION + "``")
+    ownerid = client.get_user_info("174427069747429376")
+    await client.send_message(ownerid, "Ready! ``Version: " + VERSION + "``")
     #await client.send_message(message.Config['DEV_ID'], str("Ready! ``Version: " + VERSION + "``"))
 
 
