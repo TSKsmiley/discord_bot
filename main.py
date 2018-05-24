@@ -127,10 +127,8 @@ async def rollme(category, headline):
 
 
 #replies with the version number
-@client.command
-async def version(
-    aliases = ["ver"]
-):
+@client.command(aliases = ["ver"])
+async def version():
     await client.say("Version: " + VERSION)
 
 
