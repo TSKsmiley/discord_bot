@@ -126,11 +126,12 @@ async def rollme(category, headline):
     await client.say("https://www.latlmes.com/" + category + "/" + headline)
 
 
+#replies with the version number
 @client.command
 async def version(
     aliases = ["ver"]
 ):
-    await client.say(VERSION)
+    await client.say("Version: " + VERSION)
 
 
 #math command
