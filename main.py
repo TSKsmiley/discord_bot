@@ -9,7 +9,7 @@ import requests
 import json
 import asyncio
 
-VERSION = "0.1.4.7"
+VERSION = "0.1.4.7.0.1"
 #starting colorama
 init()
 
@@ -36,6 +36,10 @@ with open('Config.json') as f:
 
 #Type bot prefix to use commands
 BOT_PREFIX = ("?",",")
+<<<<<<< HEAD
+=======
+BOT_TOKEN = Config['BOT_TOKEN']
+>>>>>>> 91f3140356166b5c7314600a11de1d30b0eaf213
 BOT_ID = Config['BOT_ID']
 varMOTD = " "
 
