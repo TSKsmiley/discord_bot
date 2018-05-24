@@ -89,11 +89,11 @@ async def eight_ball():
 
 #credits
 @client.command(
-    name = "credits",
+    name = "info",
     description = "A list of people who helped with the bot",
-    aliases = ["credits"]
+    aliases = ["information"]
 )
-async def credits():
+async def info():
     await client.say("The beautiful people who worked on the bot!\nThe Smiley Killer\nThe Lord Of Ducks")
 
 #github command [random text to fool the github raw]
