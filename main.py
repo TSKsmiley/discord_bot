@@ -119,9 +119,18 @@ async def host():
 
 
 #roll links
-@client.command
+@client.command(
+    aliases = ["roll"]
+)
 async def rollme(category, headline):
     await client.say("https://www.latlmes.com/" + category + "/" + headline)
+
+
+@client.command
+async version(
+    aliases = ["ver"]
+):
+    await client.say(VERSION)
 
 
 #math command
