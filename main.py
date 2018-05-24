@@ -187,9 +187,10 @@ async def setgame(ctx, gamename):
 async def on_ready():
     print(termcol.OKGREEN + "Logged it as: " + client.user.display_name + termcol.ENDC)
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
+    discord.Member
     #sending messages out
     ownerid = "<@174427069747429376>"
-    await client.send_message(discord.member.User("<@174427069747429376>")), str("Ready! ``Version: " + VERSION + "``"))
+    await client.send_message(discord.Member.User("<@174427069747429376>")), str("Ready! ``Version: " + VERSION + "``"))
     #await client.send_message(message.Config['DEV_ID'], str("Ready! ``Version: " + VERSION + "``"))
 
 
