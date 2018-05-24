@@ -9,7 +9,7 @@ import requests
 import json
 import asyncio
 
-VERSION = "0.1.4"
+VERSION = "0.1.4.7"
 #starting colorama
 init()
 
@@ -34,9 +34,8 @@ class termcol:
 with open('Config.json') as f:
     Config = json.load(f)
 
-
+#Type bot prefix to use commands
 BOT_PREFIX = ("?",",")
-BOT_TOKEN = Config['BOT_TOKEN']
 BOT_ID = Config['BOT_ID']
 varMOTD = " "
 
@@ -70,6 +69,14 @@ print(VERSION)
 async def eight_ball():
         possible_responses = [
             "That is a no",
+            "It is certain"
+            "It is decidedly so"
+            "As I see it, yes"
+            "You may rely on it"
+            "Don't count on it"
+            "Chances aren't good"
+            "Better you not know"
+            "Very doubtful"
             "It is not looking likely",
             "Too hard to tell",
             "It is quite possible",
@@ -79,6 +86,14 @@ async def eight_ball():
         ]
         await client.say(random.choice(possible_responses))
 
+#credits
+@client.command(
+    name = "credits",
+    description = "A list of people who helped with the bot",
+    aliases = ["credits"]
+)
+async def credits():
+    await client.say("The beautiful people who worked on the bot!\nThe Smiley Killer\nThe Lord Of Ducks")
 
 #github command [random text to fool the github raw]
 @client.command(
@@ -189,8 +204,8 @@ async def on_ready():
     await client.change_presence(game=Game(name="Prefixes = , and ?"))
     discord.Member
     #sending messages out
-    ownerid = client.get_user_info("174427069747429376")
-    await client.send_message(ownerid, "Ready! ``Version: " + VERSION + "``")
+    ownerid = "<@174427069747429376>"
+    await client.send_message(discord.Member.User("<@174427069747429376>"), str("Ready! ``Version: " + VERSION + "``"))
     #await client.send_message(message.Config['DEV_ID'], str("Ready! ``Version: " + VERSION + "``"))
 
 
