@@ -9,7 +9,7 @@ import requests
 import json
 import asyncio
 
-VERSION = "0.1.4.6.1"
+VERSION = "0.1.4.6.2.5"
 #starting colorama
 init()
 
@@ -95,7 +95,6 @@ async def eight_ball():
 )
 async def credits():
     await client.say("The beautiful people who worked on the bot!\nThe Smiley Killer\nThe Lord Of Ducks")
-)
 
 #github command [random text to fool the github raw]
 @client.command(
