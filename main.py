@@ -87,7 +87,7 @@ async def eight_ball():
         ]
         await client.say(random.choice(possible_responses))
 
-#credits
+#credits (called info because credis conflig with exciting command in discordpy)
 @client.command(
     name = "info",
     description = "A list of people who helped with the bot",
